@@ -3,32 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FLUXX — Investor Portal</title>
+<title>Fluxx Docs</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #111318; color: #e4e6ea; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
-  .container { text-align: center; padding: 40px; }
-  .brand { font-size: 18px; font-weight: 700; color: #6bb8ff; letter-spacing: 3px; margin-bottom: 8px; }
-  .sub { font-size: 13px; color: #7a8494; margin-bottom: 48px; }
-  .links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
-  a.card {
-    display: block; background: #1a1d24; border: 1px solid #2a2e38; border-radius: 12px;
-    padding: 32px 40px; text-decoration: none; transition: all 0.2s; min-width: 220px;
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0b0d18;
+    color: #eaedf5;
+    display: flex; align-items: center; justify-content: center; min-height: 100vh;
   }
-  a.card:hover { border-color: #6bb8ff; transform: translateY(-2px); }
-  a.card h3 { font-size: 16px; color: #e4e6ea; margin-bottom: 6px; }
-  a.card p { font-size: 12px; color: #7a8494; }
-  .footer { position: fixed; bottom: 20px; font-size: 11px; color: #555d6e; }
+  .container { text-align: center; padding: 40px 24px; max-width: 720px; }
+  .logo-mark { width: 200px; height: auto; margin-bottom: 32px; opacity: 0.95; }
+  .sub { font-size: 13px; color: #8b90a8; margin-bottom: 48px; letter-spacing: 0.3px; }
+  .links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  a.card {
+    display: block;
+    background: #0e1020;
+    border: 1px solid rgba(0, 196, 255, 0.12);
+    border-radius: 14px;
+    padding: 28px 32px;
+    text-decoration: none;
+    transition: all 0.3s;
+    min-width: 180px;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3), 0 0 12px rgba(0,196,255,0.02);
+  }
+  a.card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    border-radius: 4px 0 0 4px;
+  }
+  a.card:nth-child(1)::before { background: #00C4FF; }
+  a.card:nth-child(2)::before { background: #7d40ff; }
+  a.card:nth-child(3)::before { background: #5eff5a; }
+
+  a.card:nth-child(1) { border-color: rgba(0, 196, 255, 0.12); }
+  a.card:nth-child(2) { border-color: rgba(125, 64, 255, 0.12); }
+  a.card:nth-child(3) { border-color: rgba(94, 255, 90, 0.12); }
+
+  a.card:nth-child(1):hover { border-color: rgba(0, 196, 255, 0.3); }
+  a.card:nth-child(2):hover { border-color: rgba(125, 64, 255, 0.3); }
+  a.card:nth-child(3):hover { border-color: rgba(94, 255, 90, 0.3); }
+
+  a.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4), 0 0 20px rgba(0,196,255,0.04);
+  }
+  a.card h3 { font-size: 15px; font-weight: 700; color: #eaedf5; margin-bottom: 6px; padding-left: 8px; }
+  a.card p { font-size: 12px; color: #8b90a8; padding-left: 8px; }
+
+  a.card:nth-child(1) h3 { color: #00C4FF; }
+  a.card:nth-child(2) h3 { color: #7d40ff; }
+  a.card:nth-child(3) h3 { color: #5eff5a; }
+
+  .footer {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    font-size: 11px; color: #555a72; white-space: nowrap;
+  }
 </style>
 </head>
 <body>
+<svg style="display:none;">
+  <symbol id="fluxx-logo-full" viewBox="0 0 1093 1024">
+    <path d="M452.673 80.4804C399.887 63.1897 347.353 41.659 295.499 15.2702C294.175 14.5911 293.096 15.4095 293.096 17.0898V213.983C293.096 215.663 294.175 217.221 295.499 217.456C347.353 226.763 399.887 234.364 452.673 240.467C454.023 240.624 455.12 239.675 455.12 238.352V83.6581C455.12 82.3348 454.023 80.9157 452.673 80.4717V80.4804Z" fill="#00C4FF"/>
+    <path d="M623.595 122.346C570.774 113.492 517.735 101.059 464.914 84.4212C463.556 83.9946 462.468 84.6998 462.468 86.0145V239.228C462.468 240.542 463.565 241.718 464.914 241.875C517.735 247.743 570.774 252.131 623.595 255.256C624.945 255.334 626.042 254.507 626.042 253.41V124.749C626.042 123.652 624.945 122.581 623.595 122.346Z" fill="#00C4FF"/>
+    <path d="M793.02 139.229C741.165 137.392 688.631 132.638 635.854 124.333C634.504 124.115 633.407 124.829 633.407 125.926V253.839C633.407 254.927 634.504 255.876 635.854 255.954C688.64 258.888 741.174 260.56 793.02 261.213C794.343 261.23 795.423 260.421 795.423 259.411V141.136C795.423 140.126 794.343 139.273 793.02 139.22V139.229Z" fill="#00C4FF"/>
+    <path d="M452.673 247.676C399.887 242.078 347.353 235.113 295.499 226.563C294.175 226.346 293.096 227.53 293.096 229.21V426.112C293.096 427.792 294.175 428.976 295.499 428.758C347.353 420.226 399.887 413.27 452.673 407.672C454.023 407.524 455.12 406.34 455.12 405.025V250.332C455.12 249.008 454.023 247.824 452.673 247.676Z" fill="#00C4FF"/>
+    <path d="M623.595 261.23C570.774 258.366 517.735 254.335 464.914 248.954C463.556 248.815 462.468 249.764 462.468 251.07V404.283C462.468 405.589 463.565 406.538 464.914 406.399C517.735 401.019 570.774 396.996 623.595 394.132C624.945 394.062 626.042 393.105 626.042 392.008V263.346C626.042 262.249 624.945 261.3 623.595 261.222V261.23Z" fill="#00C4FF"/>
+    <path d="M452.386 414.959C399.6 421.062 347.066 428.662 295.22 437.969C293.897 438.204 292.817 439.763 292.817 441.443V638.44C292.817 640.121 293.897 640.939 295.22 640.26C347.075 613.863 399.609 592.323 452.386 575.015C453.736 574.571 454.833 573.143 454.833 571.82V417.066C454.833 415.742 453.736 414.802 452.386 414.95V414.959Z" fill="#00C4FF"/>
+    <path d="M219.308 799.324H111.38V819.72H219.308V872.126H111.38V945.211H45.0938V746.919H219.308V799.324Z" fill="#00C4FF"/>
+    <path d="M312.844 899.32H406.324V945.211H254.772V773.83H312.844V899.32Z" fill="#00C4FF"/>
+    <path d="M520.223 948.044C468.1 948.044 430.425 923.965 430.425 857.113V773.83H488.496V861.362C488.496 886.29 501.527 899.32 521.639 899.32C542.602 899.32 553.933 886.29 553.933 861.362V773.83H612.004V857.113C612.004 923.965 573.195 948.044 520.223 948.044Z" fill="#00C4FF"/>
+    <path d="M835.634 773.83L773.03 859.379L835.634 945.211H767.931L740.453 909.235H736.488L710.143 945.211H637.625L702.778 859.379L637.625 773.83H710.143L736.771 810.089H740.453L767.931 773.83H835.634Z" fill="#00C4FF"/>
+    <path d="M1047.8 773.83L985.198 859.379L1047.8 945.211H980.099L952.622 909.235H948.656L922.311 945.211H849.793L914.946 859.379L849.793 773.83H922.311L948.939 810.089H952.622L980.099 773.83H1047.8Z" fill="#00C4FF"/>
+  </symbol>
+</svg>
 <div class="container">
-  <div class="brand">FLUXX</div>
-  <div class="sub">Virtual Production & Visual Effects — Investor Portal</div>
+  <svg class="logo-mark" viewBox="0 0 1093 1024"><use href="#fluxx-logo-full"/></svg>
+  <div class="sub">Confidential Investor Documents</div>
   <div class="links">
+    <a class="card" href="teaser.html">
+      <h3>Teaser Deck</h3>
+      <p>Quick company overview</p>
+    </a>
     <a class="card" href="pitch.html">
       <h3>Pitch Deck</h3>
-      <p>Company overview & investment opportunity</p>
+      <p>Full investment thesis</p>
     </a>
     <a class="card" href="financials.html">
       <h3>Financial Model</h3>
@@ -36,6 +98,6 @@
     </a>
   </div>
 </div>
-<div class="footer">Confidential — Do Not Distribute</div>
+<div class="footer">Fluxx Virtual Production Inc. &nbsp;|&nbsp; Confidential &mdash; Do Not Distribute</div>
 </body>
 </html>
