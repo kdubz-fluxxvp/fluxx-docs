@@ -13,10 +13,11 @@
     color: #eaedf5;
     display: flex; align-items: center; justify-content: center; min-height: 100vh;
   }
-  .container { text-align: center; padding: 40px 24px; max-width: 720px; }
+  .container { text-align: center; padding: 40px 24px; max-width: 760px; }
   .logo-mark { width: 200px; height: auto; margin-bottom: 32px; opacity: 0.95; }
   .sub { font-size: 13px; color: #8b90a8; margin-bottom: 48px; letter-spacing: 0.3px; }
-  .links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  .links { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 600px) { .links { grid-template-columns: 1fr; } }
   a.card {
     display: block;
     background: #0e1020;
@@ -38,14 +39,17 @@
   a.card:nth-child(1)::before { background: #00C4FF; }
   a.card:nth-child(2)::before { background: #7d40ff; }
   a.card:nth-child(3)::before { background: #5eff5a; }
+  a.card:nth-child(4)::before { background: #ffa63f; }
 
   a.card:nth-child(1) { border-color: rgba(0, 196, 255, 0.12); }
   a.card:nth-child(2) { border-color: rgba(125, 64, 255, 0.12); }
   a.card:nth-child(3) { border-color: rgba(94, 255, 90, 0.12); }
+  a.card:nth-child(4) { border-color: rgba(255, 166, 63, 0.12); }
 
   a.card:nth-child(1):hover { border-color: rgba(0, 196, 255, 0.3); }
   a.card:nth-child(2):hover { border-color: rgba(125, 64, 255, 0.3); }
   a.card:nth-child(3):hover { border-color: rgba(94, 255, 90, 0.3); }
+  a.card:nth-child(4):hover { border-color: rgba(255, 166, 63, 0.3); }
 
   a.card:hover {
     transform: translateY(-3px);
@@ -57,6 +61,7 @@
   a.card:nth-child(1) h3 { color: #00C4FF; }
   a.card:nth-child(2) h3 { color: #7d40ff; }
   a.card:nth-child(3) h3 { color: #5eff5a; }
+  a.card:nth-child(4) h3 { color: #ffa63f; }
 
   .footer {
     position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
@@ -95,6 +100,10 @@
     <a class="card" href="financials.html">
       <h3>Financial Model</h3>
       <p>Revenue, expenses & projections</p>
+    </a>
+    <a class="card" href="brand.html">
+      <h3>Brand Style Guide</h3>
+      <p>Logo, colors, typography & components</p>
     </a>
   </div>
 </div>
